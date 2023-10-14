@@ -1,7 +1,7 @@
 {
-  "name": "web322-tarun_thomas",
+  "name": "web322-tarun-thomas",
   "version": "1.0.0",
-  "description": "WEB322 - Fall 2023",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
