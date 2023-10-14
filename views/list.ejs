@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>User List</title>
+
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .table {
+            background-color: #fff;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .thead-dark {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .btn-info {
+            background-color: #17a2b8;
+            color: #fff;
+        }
+
+        .btn-info:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+<body class="container mt-5">
+    <h2>User List</h2>
+    
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(user => { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.firstName %></td>
+                    <td><%= user.lastName %></td>
+                    <td><%= user.email %></td>
+                    <td><a href="/details/<%= user.id %>" class="btn btn-info btn-sm">View Details</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
