@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>User Details</title>
+</head>
+
+
+<body class="container mt-5">
+    
+    <h2>Details for <%= user.firstName %> <%= user.lastName %></h2>
+    
+    <ul class="list-group mt-4">
+        <li class="list-group-item"><strong>ID:</strong> <%= user.id %></li>
+        <li class="list-group-item"><strong>Email:</strong> <%= user.email %></li>
+        <li class="list-group-item"><strong>Date of Birth:</strong> <%= user.dob %></li>
+        <li class="list-group-item"><strong>Company:</strong> <%= user.company %></li>
+        <li class="list-group-item"><strong>Phone:</strong> <%= user.phone %></li>
+    </ul>
+
+    <a href="/list" class="btn btn-primary mt-4">Back to List</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
