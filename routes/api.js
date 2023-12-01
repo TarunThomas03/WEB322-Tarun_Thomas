@@ -1,22 +1,54 @@
 const express = require('express');
-const userService = require('../services/userService');
-const productService = require('../services/productService');
-const authService = require('../services/authService');
-
 const router = express.Router();
 
-router.get('/users', userService.getAllUsers);
-router.get('/users/:id', userService.getUserById);
-router.post('/users', userService.createUser);
-router.put('/users/:id', userService.updateUser);
-router.delete('/users/:id', userService.deleteUser);
+const {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+} = require('../services/users.services');
 
-router.get('/products', productService.getAllProducts);
-router.get('/products/:id', productService.getProductById);
-router.post('/products', productService.createProduct);
-router.put('/products/:id', productService.updateProduct);
-router.delete('/products/:id', productService.deleteProduct);
+const {
+  getAllProducts,
+  getProductById,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+} = require('../services/product.service');
 
-router.post('/login', authService.authenticate);
+const {
+  getAllOrders,
+  getOrderById,
+  createOrder,
+  updateOrder,
+  deleteOrder,
+} = require('../services/order.service');
+
+const { authenticate } = require('../services/authentication.service');
+
+// User routes
+router.get('/users', getAllUsers);
+router.get('/users/:id', getUserById);
+router.post('/users', createUser);
+router.put('/users/:id', updateUser);
+router.delete('/users/:id', deleteUser);
+
+// Product routes
+router.get('/products', getAllProducts);
+router.get('/products/:id', getProductById);
+router.post('/products', createProduct);
+router.put('/products/:id', updateProduct);
+router.delete('/products/:id', deleteProduct);
+
+// Order routes
+router.get('/orders', getAllOrders);
+router.get('/orders/:id', getOrderById);
+router.post('/orders', createOrder);
+router.put('/orders/:id', updateOrder);
+router.delete('/orders/:id', deleteOrder);
+
+// Authentication route
+router.post('/login', authenticate);
 
 module.exports = router;
